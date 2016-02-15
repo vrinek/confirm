@@ -15,6 +15,7 @@ fn main() {
     }
 }
 
+// Returns a custom provided prompt or the default one.
 fn get_prompt() -> String {
     match env::args().nth(1) {
         Some(prompt) => prompt,
