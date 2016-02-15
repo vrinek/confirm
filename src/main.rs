@@ -6,9 +6,9 @@ fn main() {
     let prompt = get_prompt();
     println!("{} (yes/NO)", prompt);
 
-    let answer = get_answer();
+    let response = get_response();
 
-    if is_positive(answer) {
+    if is_positive(response) {
         process::exit(0);
     } else {
         process::exit(1);
@@ -22,21 +22,21 @@ fn get_prompt() -> String {
     }
 }
 
-// Gets the answer from STDIN and trims it.
-fn get_answer() -> String {
-    let mut answer = String::new();
+// Gets the response from STDIN and trims it.
+fn get_response() -> String {
+    let mut response = String::new();
 
-    io::stdin().read_line(&mut answer)
+    io::stdin().read_line(&mut response)
         .expect("Failed to read line");
 
-    String::from(answer.trim())
+    String::from(response.trim())
 }
 
-// Returns true for a positive answer.
-fn is_positive(answer: String) -> bool {
-    let answer = answer.to_lowercase();
+// Returns true for a positive response.
+fn is_positive(response: String) -> bool {
+    let response = response.to_lowercase();
 
-    answer == "yes" || answer == "y"
+    response == "yes" || response == "y"
 }
 
 #[test]
