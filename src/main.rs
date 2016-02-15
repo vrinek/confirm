@@ -1,8 +1,10 @@
 use std::io;
 use std::process;
+use std::env;
 
 fn main() {
-    println!("Are you sure? (yes/NO)");
+    let prompt = get_prompt();
+    println!("{} (yes/NO)", prompt);
 
     let answer = get_answer();
 
@@ -10,6 +12,13 @@ fn main() {
         process::exit(0);
     } else {
         process::exit(1);
+    }
+}
+
+fn get_prompt() -> String {
+    match env::args().nth(1) {
+        Some(prompt) => prompt,
+        None => String::from("Are you sure?")
     }
 }
 
