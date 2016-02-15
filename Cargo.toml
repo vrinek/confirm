@@ -1,7 +1,11 @@
 [package]
 name = "confirm"
 version = "0.1.0"
-authors = ["vrinek <vrinek@users.noreply.github.com>"]
+license = "MIT"
+description = "Small utility program to confirm an action"
+authors = ["Kostas <kostas@vrinek.io>"]
+repository = "https://github.com/vrinek/confirm"
+readme = "README.md"
 
 [[bin]]
 name = "confirm"
