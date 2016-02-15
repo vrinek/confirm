@@ -3,4 +3,6 @@ name = "confirm"
 version = "0.1.0"
 authors = ["vrinek <vrinek@users.noreply.github.com>"]
 
-[dependencies]
+[[bin]]
+name = "confirm"
+path = "src/main.rs"
